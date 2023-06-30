@@ -1,22 +1,26 @@
-import React from 'react';
-import s from './Strength.module.css';
-
+import React from "react";
+import s from "./Strength.module.css";
+import ColorStripes from "../ColorStripes/ColorStripes";
 function Strength({ color }) {
-  const greenField = {
-    backgroundColor: color === 'green' ? 'green' : 'grey'
+  console.log(color);
+  const setBarColors = () => {
+    if (color.strong) {
+      return { bar1: "green", bar2: "green", bar3: "green" };
+    } else if (color.middle) {
+      return { bar1: "gray", bar2: "yellow", bar3: "yellow" };
+    } else if (color.weak) {
+      return { bar1: "gray", bar2: "gray", bar3: "red" };
+    } else {
+      return { bar1: "gray", bar2: "gray", bar3: "gray" };
+    }
   };
-  const yellowField = {
-    backgroundColor: color === 'yellow' ? 'yellow' : 'grey'
-  };
-  const redField = {
-    backgroundColor: color === 'red' ? 'red' : 'grey'
-  };
+  const barColors = setBarColors();
 
   return (
     <div className={s.box}>
-      <div className={s.field} style={greenField}></div>
-      <div className={s.field} style={yellowField}></div>
-      <div className={s.field} style={redField}></div>
+      <ColorStripes color={barColors.bar1} />
+      <ColorStripes color={barColors.bar2} />
+      <ColorStripes color={barColors.bar3} />
     </div>
   );
 }

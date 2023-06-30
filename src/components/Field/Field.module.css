@@ -1,0 +1,18 @@
+.App {
+    padding: 30px;
+  }
+  
+  .input {
+    padding: 7px 8px;
+    width: 300px;
+    font-size: 16px;
+    font-family: caption; 
+  }
+  
+  .checkbox_container {
+    margin: 20px 0;
+  }
+  
+  .button {
+    padding: 7px 30px;
+  }

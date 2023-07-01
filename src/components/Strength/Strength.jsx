@@ -2,7 +2,6 @@ import React from "react";
 import s from "./Strength.module.css";
 import ColorStripes from "../ColorStripes/ColorStripes";
 function Strength({ color }) {
-  console.log(color);
   const setBarColors = () => {
     if (color.strong) {
       return { bar1: "green", bar2: "green", bar3: "green" };
